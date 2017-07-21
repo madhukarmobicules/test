@@ -1,0 +1,778 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "0.0.1",
+    "title": "Legal-logix App"
+  },
+  "basePath": "/logix/api/v1",
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json",
+    "application/x-www-form-urlencoded",
+    "multipart/form-data"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "tags": [
+    {
+      "name": "user",
+      "description": "User Apis"
+    },
+    {
+      "name": "admin",
+      "description": "admin Apis"
+    },
+    {
+      "name": "question",
+      "description": "question Apis"
+    },
+    {
+      "name": "section",
+      "description": "section Apis"
+    },
+    {
+      "name": "case",
+      "description": "create case"
+    }
+
+  ],
+  "paths": {
+    "/user/register": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "description": "User signup via email.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "formData",
+            "description": "user email",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "description": "user password",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/user/resend/verification/link": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "description": "Resend Verification link",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "formData",
+            "description": "Eamil id",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/user/email/verify": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "description": "Verify email",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "token",
+            "in": "query",
+            "description": "Eamil ids",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/user/login": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "description": "User login via email.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "formData",
+            "description": "user email",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "description": "user password",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/user/logout": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "description": "logout  user",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Access key",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/user/password/forgot": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "description": "for forgot password",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "formData",
+            "description": "Eamil ids",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+
+    "/user/password/change": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "description": "For  password change",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Access key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "cPassword",
+            "in": "formData",
+            "description": "current password",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "nPassword",
+            "in": "formData",
+            "description": "New password",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/user/qualifying/error": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "description": "For  password change",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Access key",
+            "required": true,
+            "type": "string"
+          }
+
+        ]
+      }
+    },
+    "/user/password/reset": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "description": "for password reset using link",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "resetPasswordToken",
+            "in": "formData",
+            "description": "reset Password token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "description": "New password",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/user/brief": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "description": "get user brief  user",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+
+        ]
+      }
+    },
+
+    "/user/dashboard": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "description": "get user dashboard",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Access key",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/user/generate/pdf": {
+      "get": {
+        "tags": [
+          "user"
+        ],
+        "description": "get user brief  user",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+
+        ]
+      }
+    },
+    "/user/tnc/accept": {
+      "post": {
+        "tags": [
+          "user"
+        ],
+        "description": "Accept term and condition",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Access key",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/admin/login": {
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "description": "Admin/Super admin login via email.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "formData",
+            "description": "user email",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "description": "user password",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/admin/create": {
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "description": "Super creation",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "formData",
+            "description": "admin email",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "description": "admin password",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "key",
+            "in": "formData",
+            "description": "key to create",
+            "required": true,
+            "type": "Number"
+          }
+        ]
+      }
+    },
+    "/admin/add": {
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "description": "Add Admin/Super ",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Access key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "fName",
+            "in": "formData",
+            "description": "admin first name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "lName",
+            "in": "formData",
+            "description": "admin last name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "type",
+            "in": "formData",
+            "description": "admin type Super Admin = 1 , admin = 2",
+            "required": true,
+            "type": "Number"
+          },
+          {
+            "name": "email",
+            "in": "formData",
+            "description": "email of admin/super admin",
+            "required": true,
+            "type": "String"
+          }
+        ]
+      }
+    },
+    "/admin/set/password": {
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "description": "Admin/Super admin login via email.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "setPasswordToken",
+            "in": "formData",
+            "description": "set password token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "description": "admin password password",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/admin/logout": {
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "description": "logout  admin user",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Access key",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/admin/password/forgot": {
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "description": "for admin forgot password",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "formData",
+            "description": "Eamil ids",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/admin/password/reset": {
+      "post": {
+        "tags": [
+          "admin"
+        ],
+        "description": "for password reset using link",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "resetPasswordToken",
+            "in": "formData",
+            "description": "reset Password token",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "description": "New password",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/question/import": {
+      "post": {
+        "tags": [
+          "question"
+        ],
+        "description": "Import csv",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+
+          {
+            "name": "key",
+            "in": "formData",
+            "description": "key",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/question/truncate": {
+      "post": {
+        "tags": [
+          "question"
+        ],
+        "description": "truncate csv data ",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+
+          {
+            "name": "key",
+            "in": "formData",
+            "description": "key",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/question/qualifying": {
+      "get": {
+        "tags": [
+          "question"
+        ],
+        "description": "get all qualifying question.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Access key",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/question/get/all": {
+      "get": {
+        "tags": [
+          "question"
+        ],
+        "description": "get all  question.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Access key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "sid",
+            "in": "query",
+            "description": "section id",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pageNo",
+            "in": "query",
+            "description": "page no ",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "description": "pageSize default all",
+            "required": false,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/question/qualifying/answer": {
+      "post": {
+        "tags": [
+          "question"
+        ],
+        "description": "Qualyfing qustion submit.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Access key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "qualifyingAnswer",
+            "in": "formData",
+            "description": "qualifyingAnswer [{qid : 11 , atype : text ,answer :hh }]" ,
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/question/answer": {
+      "post": {
+        "tags": [
+          "question"
+        ],
+        "description": "Answer submit.",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Access key",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "answer",
+            "in": "formData",
+            "description": "qualifyingAnswer {qid : 11 , atype : text ,answer :hh  , roption = jj}" ,
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/section/import": {
+      "post": {
+        "tags": [
+          "section"
+        ],
+        "description": "Import section",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+
+          {
+            "name": "key",
+            "in": "formData",
+            "description": "key",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/section/truncate": {
+      "post": {
+        "tags": [
+          "section"
+        ],
+        "description": "truncate section data ",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+
+          {
+            "name": "key",
+            "in": "formData",
+            "description": "key",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/case/create": {
+      "post": {
+        "tags": [
+          "case"
+        ],
+        "description": "create case ",
+        "consumes": [
+          "application/x-www-form-urlencoded"
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "description": "Access key",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "/swagger": {
+      "x-swagger-pipe": "swagger_raw"
+    }
+  },
+  "definitions": {
+    "HelloWorldResponse": {
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "ErrorResponse": {
+      "required": [
+        "message"
+      ],
+      "properties": {
+        "message": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

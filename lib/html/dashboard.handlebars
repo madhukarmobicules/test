@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Legal Logix</title>
+</head>
+<body>
+<table style="width:800px; background: #fff; margin:0 auto; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">
+    <tr>
+        <td style="float:right; color:red;">INSERT CURRENT DATE</td>
+    </tr>
+    <tr>
+        <td style="        border: solid 2px #02141d;
+               border-radius: 15px;
+               padding: 10px 20px;
+               color: #006699;
+               text-align: center;
+               font-size: 25px;
+               width: 70%;
+               float: right;
+               margin-right: 35px;
+               background: #fff;">
+            SUMMARY OF INFORMATION
+        </td>
+    </tr>
+    <tr>
+        <td style="    width: 100%;
+               background-color: #00334d;
+               color: #fff;
+               margin-top: -20px;
+               display: block;
+               /* height: 75px; */
+               padding-top: 35px;
+               text-align: left;
+               padding-left: 32px;
+               padding-bottom: 15px;">
+            Property Settlement Summary (prepared for)
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table style="width:100%;">
+                <tbody>
+                <tr>
+                    <td>Our Ref:<span style="color:red  padding-left:10px">DISPLAY DB GENERATED CASE #</span></td>
+                    <td style="float:right">% of Interview Complete:<span style="color:red; padding-left:10px">calculate</span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td style="float:right"># of Uncertain Responses:<span style="color:red; padding-left:10px">calculate</span></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td style="float:right"># of Documents Required:<span style="color:red; padding-left:10px">calculate</span></td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td style="border-bottom:solid 1px #006699; font-size:25px;">
+            General
+        </td>
+    </tr>
+    <tr>
+        <td style="font-size: 20px;
+               padding-top: 10px;
+               padding-bottom: 15px;">
+            Relationship Details
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table style="width:100%; margin-top:20px;">
+                <tr>
+                    <td>Period of Cohabitation:<span style="color:red  padding-left:10px">{{briefData.periodofcohabitation}}</span></td>
+                    <td style="float:right">Prenuptial Agreement:<span style="color:red; padding-left:10px">{{briefData.prenuptialAgreement}}</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <table>
+                            <tr>
+                                <td >Date of Separation:<span style="color:red; padding-left:10px">{{briefData.dateOfSepration1}} or {{briefData.dateOfSepration2}} (conditional)</span>
+                            </tr>
+                            <tr>
+                                <td >Relationship Type:<span style="color:red; padding-left:10px"> {{briefData.relationType}}</span></td>
+                            </tr>
+                            <tr>
+                                <td >Marriage Date:<span style="color:red; padding-left:10px">{{briefData.marriageDate}}</span></td>
+                            </tr>
+                            <tr>
+                                <td >Divorce Date::<span style="color:red; padding-left:10px"> {{briefData.divorceDate}}</span></td>
+                            </tr>
+                            <tr>
+                                <td >Client’s Current Relations with Former Partner:<span style="color:red; padding-left:10px"> {{briefData.cCurrentRWFP}}</span></td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td >
+                        <table style="float:right;" >
+                            <tr>
+                                <td style="float:right"> Open Court Proceedings</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <ul>
+                                        <li>Property Settlement: <span style="color:red;">Q143</span></li>
+                                        <li>Child Maintenance: <span style="color:red;">Q149</span></li>
+                                        <li>Parenting Orders: <span style="color:red;">Q155</span></li>
+                                        <li>Spousal Maintenance: <span style="color:red;">Q161</span></li>
+                                        <li>Domestic Violence: <span style="color:red;">Q173</span></li>
+                                        <li>Other Proceedings: <span style="color:red;">Q167</span></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table style="width:100%; border-collapse:collapse; text-align:left; margin-bottom:50px;" border="1">
+                <tr>
+                    <th style="padding-left:10px;">
+                    </th>
+                    <th style="padding-left:10px;">Client
+                    </th>
+                    <th style="padding-left:10px;">Partner
+                    </th>
+                </tr>
+                <tr>
+                    <td style="padding-left:10px;">Name
+                    </td>
+                    <td style="color:red; padding-left:10px;">Q1,Q616
+                    </td>
+                    <td style="color:red; padding-left:10px;">Q1,Q616
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-left:10px;">Age
+                    </td>
+                    <td style="color:red; padding-left:10px;">TODAY—Q3
+                    </td>
+                    <td style="color:red; padding-left:10px;">TODAY—Q8
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-left:10px;">Australian Citizen
+                    </td>
+                    <td style="color:red; padding-left:10px;">Q4
+                    </td>
+                    <td style="color:red; padding-left:10px;">Q9
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-left:10px;">Australian Resident
+                    </td>
+                    <td style="color:red; padding-left:10px;">Q5
+                    </td>
+                    <td style="color:red; padding-left:10px;">Q10
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-left:10px;">Current Health Status
+                    </td>
+                    <td style="color:red; padding-left:10px;">Q41
+                    </td>
+                    <td style="color:red; padding-left:10px;">Q51
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-left:10px;">Health Impacts Employment
+                    </td>
+                    <td style="color:red; padding-left:10px;">Q42
+                    </td>
+                    <td style="color:red; padding-left:10px;">Q52
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-left:10px;">Usual Occupation
+                    </td>
+                    <td style="color:red; padding-left:10px;">Q34
+                    </td>
+                    <td style="color:red; padding-left:10px;">Q47
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-left:10px;">Unemployed
+                    </td>
+                    <td style="color:red; padding-left:10px;">Q37
+                    </td>
+                    <td style="color:red; padding-left:10px;">-
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-left:10px;">Re-partnered
+                    </td>
+                    <td style="color:red; padding-left:10px;">Q62
+                    </td>
+                    <td style="color:red; padding-left:10px;">Q70
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-left:10px;">DV Allegations by
+                    </td>
+                    <td style="color:red; padding-left:10px;">Q76
+                    </td>
+                    <td style="color:red; padding-left:10px;">Q68
+                    </td>
+                </tr>
+
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td style="border-bottom:solid 1px #006699; font-size:25px; ">
+            Dependant Children
+        </td>
+    </tr>
+    <tr>
+        <td style="font-size: 20px;
+               padding-top: 10px;
+               padding-bottom: 15px;">
+            Children
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table style="width:100%; border-collapse:collapse; text-align:left; margin-top:20px; margin-bottom:50px;border-color:#000066;" border="1">
+                <tr>
+                    <th style="padding-left:10px; background-color:#006699; color:#fff">Child
+                    </th>
+                    <th style="padding-left:10px; background-color:#006699; color:#fff">Relationship
+                    </th>
+                    <th style="padding-left:10px; background-color:#006699; color:#fff">Biological Parent
+                    </th>
+                    <th style="padding-left:10px; background-color:#006699; color:#fff">Age
+                    </th>
+                    <th style="padding-left:10px; background-color:#006699; color:#fff">Health
+                    </th>
+                    <th style="padding-left:10px; background-color:#006699; color:#fff">Disability
+                    </th>
+                </tr>
+                <tr>
+                    <td  style="padding-left:10px;">1
+                    </td>
+                    <td style="color:red; padding-left:10px;">Current (Q83)
+                    </td>
+                    <td style="color:red; padding-left:10px;">Both
+                    </td>
+                    <td style="color:red; padding-left:10px;">TODAY—Q85
+                    </td>
+                    <td style="color:red; padding-left:10px;">Q88
+                    </td>
+                    <td style="color:red; padding-left:10px;">Q89
+                    </td>
+                </tr>
+                <tr>
+                    <td  style="padding-left:10px;">2
+                    </td>
+                    <td style="color:red; padding-left:10px;">Former (Q91)
+                    </td>
+                    <td style="color:red; padding-left:10px;">Client
+                    </td>
+                    <td style="color:red; padding-left:10px;">TODAY—Q94
+                    </td>
+                    <td style="color:red; padding-left:10px;">Q95
+                    </td>
+                    <td style="color:red; padding-left:10px;">-
+                    </td>
+                </tr>
+
+                <tr>
+                    <td  style="padding-left:10px;">3
+                    </td>
+                    <td style="color:red; padding-left:10px;">Former (Q108)
+                    </td>
+                    <td style="color:red; padding-left:10px;">Q10
+                    </td>
+                    <td style="color:red; padding-left:10px;">TODAY—Q111
+                    </td>
+                    <td style="color:red; padding-left:10px;">Q112
+                    </td>
+                    <td style="color:red; padding-left:10px;">Q113
+                    </td>
+                </tr>
+                <tr>
+                    <td  style="padding-left:10px;">4
+                    </td>
+                    <td style="color:red; padding-left:10px;">Etc…
+                    </td>
+                    <td style="color:red; padding-left:10px;">
+                    </td>
+                    <td style="color:red; padding-left:10px;">
+                    </td>
+                    <td style="color:red; padding-left:10px;">
+                    </td>
+                    <td style="color:red; padding-left:10px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td  style="padding-left:10px;">5
+                    </td>
+                    <td style="color:red; padding-left:10px;">
+                    </td>
+                    <td style="color:red; padding-left:10px;">
+                    </td>
+                    <td style="color:red; padding-left:10px;">
+                    </td>
+                    <td style="color:red; padding-left:10px;">
+                    </td>
+                    <td style="color:red; padding-left:10px;">
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+
+
+    <tr>
+        <td style="border-bottom:solid 1px #006699; font-size:25px; ">
+            Dependants —Other
+        </td>
+    </tr>
+    <tr>
+        <td style="font-size: 20px;
+               padding-top: 10px;
+               padding-bottom: 15px;">
+            Other
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <table style="width:100%; border-collapse:collapse; text-align:left; margin-top:20px; border-color:#000066;" border="1">
+                <tr>
+                    <th style="padding-left:10px; background-color:#006699; color:#fff;">Dependant
+                    </th>
+                    <th style="padding-left:10px; background-color:#006699; color:#fff;">Party
+                    </th>
+                    <th style="padding-left:10px; background-color:#006699; color:#fff;">Relationship
+                    </th>
+                    <th style="padding-left:10px; background-color:#006699; color:#fff;">Age
+                    </th>
+                    <th style="padding-left:10px; background-color:#006699; color:#fff;">Health
+                    </th>
+                    <th style="padding-left:10px; background-color:#006699; color:#fff;">Disability
+                    </th>
+                </tr>
+                <tr>
+                    <td  style="padding-left:10px;">1
+                    </td>
+                    <td style="color:red; padding-left:10px;">Client (Q124)
+                    </td>
+                    <td style="color:red; padding-left:10px;">Q127
+                    </td>
+                    <td style="color:red; padding-left:10px;">-
+                    </td>
+                    <td style="color:red; padding-left:10px;">Q128
+                    </td>
+                    <td style="color:red; padding-left:10px;">Q129
+                    </td>
+                </tr>
+                <tr>
+                    <td  style="padding-left:10px;">2
+                    </td>
+                    <td style="color:red; padding-left:10px;">Partner (Q133)
+                    </td>
+                    <td style="color:red; padding-left:10px;">Q136
+                    </td>
+                    <td style="color:red; padding-left:10px;">-
+                    </td>
+                    <td style="color:red; padding-left:10px;">Q137
+                    </td>
+                    <td style="color:red; padding-left:10px;">Q138
+                    </td>
+                </tr>
+
+                <tr>
+                    <td  style="padding-left:10px;">3
+                    </td>
+                    <td style="color:red; padding-left:10px;">Etc...
+                    </td>
+                    <td style="color:red; padding-left:10px;">
+                    </td>
+                    <td style="color:red; padding-left:10px;">
+                    </td>
+                    <td style="color:red; padding-left:10px;">
+                    </td>
+                    <td style="color:red; padding-left:10px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td  style="padding-left:10px;">4
+                    </td>
+                    <td style="color:red; padding-left:10px;">
+                    </td>
+                    <td style="color:red; padding-left:10px;">
+                    </td>
+                    <td style="color:red; padding-left:10px;">
+                    </td>
+                    <td style="color:red; padding-left:10px;">
+                    </td>
+                    <td style="color:red; padding-left:10px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td  style="padding-left:10px;">5
+                    </td>
+                    <td style="color:red; padding-left:10px;">
+                    </td>
+                    <td style="color:red; padding-left:10px;">
+                    </td>
+                    <td style="color:red; padding-left:10px;">
+                    </td>
+                    <td style="color:red; padding-left:10px;">
+                    </td>
+                    <td style="color:red; padding-left:10px;">
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</body>
+</html>
